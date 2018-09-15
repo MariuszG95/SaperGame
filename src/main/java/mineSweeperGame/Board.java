@@ -42,8 +42,7 @@ public class Board {
 
                         }
                     }
-                }
-                 else {
+                } else {
                     displayArray[row][col] = (cells[row][col].getBombsAround()).toString();
                     if (cells[row][col].getBombsAround() == 0) {
                         displayArray[row][col] = "\u25A1";
