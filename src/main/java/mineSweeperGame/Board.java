@@ -27,18 +27,20 @@ public class Board {
         switch (move) {
 
             case CLICK:
-                displayArray[row][col] = (cells[row][col].getBombsAround()).toString();
-                if (cells[row][col].getBombsAround()==0){
-                    displayArray[row][col] = "\u25A1";
-
-
-                    }
 
                 if (cells[row][col].getIsABomb()) {
                     displayArray[row][col] = "\u263B";
                     System.out.println("BOMBA!!! Przegrałeś!");
                     gameState = gameState.LOST;
+                } else {
+                    displayArray[row][col] = (cells[row][col].getBombsAround()).toString();
+                    if (cells[row][col].getBombsAround() == 0) {
+                        displayArray[row][col] = "\u25A1";
+
+
+                    }
                 }
+
                 break;
             case MARKASBOMB:
 
@@ -61,6 +63,7 @@ public class Board {
             case UNMARKED:
                 if (displayArray[row][col].equals("\u2020")) {
                     displayArray[row][col] = "\u25A0";
+                    counterOfMarkedCells--;
                 }
                 break;
 

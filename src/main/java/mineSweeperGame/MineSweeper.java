@@ -9,27 +9,30 @@ public class MineSweeper {
 
 
         System.out.println("Podaj poziom trudności: EASY(e), MEDIUM(m), HARD(h)");
-        Scanner sc = new Scanner(System.in);
-        char c = sc.next().charAt(0);
-        switch (c) {
+        try {
+            Scanner sc = new Scanner(System.in);
+            char c = sc.next().charAt(0);
+            switch (c) {
 
-            case 'h':
-                board = new Board(Difficulty.HARD);
-                System.out.println("Podziwiam!");
-                System.out.println("Powodzenia!");
-                break;
-            case 'e':
-                board = new Board(Difficulty.EASY);
-                System.out.println("Jesteś mało ambitny!");
-                System.out.println("Powodzenia!");
-                break;
-            case 'm':
-                board = new Board(Difficulty.MEDIUM);
-                System.out.println("Tak w sam raz!");
-                System.out.println("Powodzenia!");
-                break;
-            default:
-                break;
+                case 'h':
+                    board = new Board(Difficulty.HARD);
+                    System.out.println("Podziwiam!");
+                    System.out.println("Powodzenia!");
+                    break;
+                case 'e':
+                    board = new Board(Difficulty.EASY);
+                    System.out.println("Jesteś mało ambitny!");
+                    System.out.println("Powodzenia!");
+                    break;
+                case 'm':
+                    board = new Board(Difficulty.MEDIUM);
+                    System.out.println("Tak w sam raz!");
+                    System.out.println("Powodzenia!");
+                    break;
+            }
+        } catch (IndexOutOfBoundsException|NullPointerException|NumberFormatException ex) {
+            System.out.println("Wybrałeś niepoprawny poziom.");
+            play();
         }
 
         Display display = new Display();
