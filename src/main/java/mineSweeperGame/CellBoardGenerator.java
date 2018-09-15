@@ -166,7 +166,7 @@ public class CellBoardGenerator {
         displayArray = new String[row][col];
         for (int i = 0; i < row; i++) {
             for (int j = 0; j < col; j++) {
-                displayArray[i][j] = "\u25A0";
+                displayArray[i][j] = "\u25A0 ";
 
             }
 

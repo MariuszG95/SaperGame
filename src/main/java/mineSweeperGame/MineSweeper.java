@@ -8,28 +8,31 @@ public class MineSweeper {
     public void play() {
 
 
-        System.out.println("podaj poziom trudności: EASY(e), MEDIUM(m), HARD(h)");
-        Scanner sc = new Scanner(System.in);
-        char c = sc.next().charAt(0);
-        switch (c) {
+        System.out.println("Podaj poziom trudności: EASY(e), MEDIUM(m), HARD(h)");
+        try {
+            Scanner sc = new Scanner(System.in);
+            char c = sc.next().charAt(0);
+            switch (c) {
 
-            case 'h':
-                board = new Board(Difficulty.HARD);
-                System.out.println("Podziwiam!");
-                System.out.println("Powodzenia!");
-                break;
-            case 'e':
-                board = new Board(Difficulty.EASY);
-                System.out.println("Jesteś mało ambitny!");
-                System.out.println("Powodzenia!");
-                break;
-            case 'm':
-                board = new Board(Difficulty.MEDIUM);
-                System.out.println("Tak w sam raz!");
-                System.out.println("Powodzenia!");
-                break;
-            default:
-                break;
+                case 'h':
+                    board = new Board(Difficulty.HARD);
+                    System.out.println("Podziwiam!");
+                    System.out.println("Powodzenia!");
+                    break;
+                case 'e':
+                    board = new Board(Difficulty.EASY);
+                    System.out.println("Jesteś mało ambitny!");
+                    System.out.println("Powodzenia!");
+                    break;
+                case 'm':
+                    board = new Board(Difficulty.MEDIUM);
+                    System.out.println("Tak w sam raz!");
+                    System.out.println("Powodzenia!");
+                    break;
+            }
+        } catch (IndexOutOfBoundsException|NullPointerException|NumberFormatException ex) {
+            System.out.println("Wybrałeś niepoprawny poziom.");
+            play();
         }
 
         Display display = new Display();
@@ -46,7 +49,7 @@ public class MineSweeper {
 
     private void askForMove() {
 
-        System.out.println("zrob ruch: podaj pole i co chcesz zrobic (b-oznacz jako bombe, o - odkryj pole)");
+        System.out.println("Wykonaj ruch: ZAZNACZ BOMBĘ (b), ODKRYJ POLE (o), ODZNACZ BOMBĘ (x)");
         int row = 0;
         int col = 0;
         char move = 0;
