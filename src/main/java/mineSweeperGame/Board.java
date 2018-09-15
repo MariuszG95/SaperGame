@@ -1,8 +1,7 @@
 package mineSweeperGame;
 
-import static mineSweeperGame.MoveType.CLICK;
+
 import static mineSweeperGame.MoveType.MARKASBOMB;
-import static mineSweeperGame.MoveType.UNMARKED;
 
 public class Board {
 
@@ -10,19 +9,30 @@ public class Board {
     private Cell[][] cells;
     private String[][] displayArray;
     private CellBoardGenerator cellBoardGenerator;
+    private Difficulty difficulty;
 
+    int counterOfMarkedBombs = 0;
+    int counterOfMarkedCells = 0;
 
     public Board(Difficulty difficulty) {
         cellBoardGenerator = new CellBoardGenerator();
+        this.difficulty = difficulty;
         this.gameState = GameState.INPROGRESS;
         this.cells = cellBoardGenerator.generateCells(difficulty.getCol(), difficulty.getRow(), difficulty.getNumberOfBombs());
         this.displayArray = cellBoardGenerator.generateCoveredDisplayArray(difficulty.getCol(), difficulty.getRow());
     }
 
     public void makeAMove(MoveType move, int row, int col) {
+
         switch (move) {
+
             case CLICK:
                 displayArray[row][col] = (cells[row][col].getBombsAround()).toString();
+                if (cells[row][col].getBombsAround()==0){
+
+
+                    }
+
                 if (cells[row][col].getIsABomb()) {
                     displayArray[row][col] = "\u263B";
                     System.out.println("BOMBA!!! Przegrałeś!");
@@ -30,8 +40,21 @@ public class Board {
                 }
                 break;
             case MARKASBOMB:
-                displayArray[row][col] = "\u2020";
 
+                if (counterOfMarkedCells == difficulty.getNumberOfBombs()) {
+                    System.out.println("odznacz cos");
+                    break;
+                }
+                displayArray[row][col] = "\u2020";
+                counterOfMarkedCells++;
+                if (cells[row][col].getIsABomb()) {
+                    counterOfMarkedBombs++;
+                }
+
+                if (counterOfMarkedBombs == difficulty.getNumberOfBombs()) {
+                    this.gameState = gameState.WON;
+                }
+                displayArray[row][col] = "\u2020";
                 break;
 
             case UNMARKED:

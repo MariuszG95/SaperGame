@@ -47,12 +47,17 @@ public class MineSweeper {
     private void askForMove() {
 
         System.out.println("zrob ruch: podaj pole i co chcesz zrobic (b-oznacz jako bombe, o - odkryj pole)");
-        Scanner scanner = new Scanner(System.in);
-        String input = scanner.next();
-        char rowChar = input.charAt(0);
-        int row = (int) rowChar - 97;
-        int col = (Integer.parseInt(String.valueOf(input.charAt(1)))) - 1;
-        char move = input.charAt(2);
+        int row = 0;
+        int col = 0;
+        char move = 0;
+        try {
+            Scanner scanner = new Scanner(System.in);
+            String input = scanner.next();
+            char rowChar = input.charAt(0);
+            row = (int) rowChar - 97;
+            col = (Integer.parseInt(String.valueOf(input.charAt(1)))) - 1;
+            move = input.charAt(2);
+
 
         switch (move) {
 
@@ -66,6 +71,9 @@ public class MineSweeper {
                 board.makeAMove(MoveType.UNMARKED, row, col);
             default:
                 break;
+        }
+        } catch (IndexOutOfBoundsException|NumberFormatException ex) {
+            askForMove();
         }
     }
 }
