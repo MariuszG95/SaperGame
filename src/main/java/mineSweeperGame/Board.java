@@ -20,6 +20,9 @@ public class Board {
     public void makeAMove(MoveType move, int row, int col) {
         switch (move){
             case CLICK:
+                break;
+            case MARKASBOMB:
+                break;
 
         }
 
