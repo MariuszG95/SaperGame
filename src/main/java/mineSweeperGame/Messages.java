@@ -9,149 +9,166 @@ public class Messages {
         return random.nextInt(bound + 1);
     }
 
-    public static String easyDificultyMessage() {
+    public static void easyDificultyMessage() {
         int numberOfAvailableMessages = 3;
-        String Message = null;
+        String message = null;
         switch (giveMeRandomNumber(numberOfAvailableMessages - 1)) {
             case 0:
-                Message = "Stać Cie na wiecej!";
+                message = "Stać Cie na wiecej!";
                 break;
             case 1:
-                Message = "Powaznie?";
+                message = "Powaznie?";
                 break;
             case 2:
-                Message = "Nudy!";
+                message = "Nudy!";
                 break;
         }
-        return Message;
+        System.out.println(message);
     }
 
-    public static String mediumDificultyMessage() {
+    public static void mediumDificultyMessage() {
         int numberOfAvailableMessages = 3;
-        String Message = null;
+        String message = null;
         switch (giveMeRandomNumber(numberOfAvailableMessages - 1)) {
             case 0:
-                Message = "O tak!";
+                message = "O tak!";
                 break;
             case 1:
-                Message = "No w koncu cos sie dzieje...";
+                message = "No w koncu cos sie dzieje...";
                 break;
             case 2:
-                Message = "Powodzenia kolego! (lub kolezanko :D)";
+                message = "Powodzenia kolego! (lub kolezanko :D)";
                 break;
         }
-        return Message;
+        System.out.println(message);
     }
 
-    public static String hardDificultyMessage() {
+    public static void hardDificultyMessage() {
         int numberOfAvailableMessages = 3;
-        String Message = null;
+        String message = null;
         switch (giveMeRandomNumber(numberOfAvailableMessages - 1)) {
             case 0:
-                Message = "No chyba Cie matka nie kocha...";
+                message = "No chyba Cie matka nie kocha...";
                 break;
             case 1:
-                Message = "Uuu... Lubisz wyzwania! Lubie Cie ;)";
+                message = "Uuu... Lubisz wyzwania! Lubie Cie ;)";
                 break;
             case 2:
-                Message = "Nie wiemczy wiesz, ale jak przegrasz to uruchomisz komende \"format c\"... wiec zycze powodzenia :D";
+                message = "Nie wiem czy wiesz, ale jak przegrasz to uruchomisz komende \"format c\"... wiec zycze powodzenia :D";
                 break;
         }
-        return Message;
+        System.out.println(message);
     }
 
-    public static String winningMessage() {
+    public static void winningMessage() {
         int numberOfAvailableMessages = 3;
-        String Message = null;
+        String message = null;
         switch (giveMeRandomNumber(numberOfAvailableMessages - 1)) {
             case 0:
-                Message = "Nie spodziewalem sie tego!";
+                message = "Nie spodziewalem sie tego!";
                 break;
             case 1:
-                Message = "Bylem pewny, ze przegrasz.";
+                message = "Bylem pewny, ze przegrasz.";
                 break;
             case 2:
-                Message = "Moje gratulacje...";
+                message = "Moje gratulacje...";
                 break;
         }
-        return Message;
+        System.out.println(message);
     }
 
-    public static String lostingMessage() {
+    public static void lostingMessage() {
         int numberOfAvailableMessages = 3;
-        String Message = null;
+        String message = null;
         switch (giveMeRandomNumber(numberOfAvailableMessages - 1)) {
             case 0:
-                Message = "Ha! Wiedzialem!";
+                message = "Ha! Wiedzialem! Przegrales!";
                 break;
             case 1:
-                Message = "Hahahahahaha!";
+                message = "Hahahahahaha! Przegrales!";
                 break;
             case 2:
-                Message = "Moze nastepnym razem sie uda ;)";
+                message = "Moze nastepnym razem sie uda ;)";
                 break;
         }
-        return Message;
+        System.out.println(message);
     }
 
-    public static String afterMove() {
+    public static void afterMove() {
         int numberOfAvailableMessages = 6;
-        String Message = null;
+        String message = null;
         switch (giveMeRandomNumber(numberOfAvailableMessages - 1)) {
             case 0:
-                Message = "Bylo blisko!";
+                message = "Bylo blisko!";
                 break;
             case 1:
-                Message = "Nie chce nic mowic, ale obok jest bomba...";
+                message = "Nie chce nic mowic, ale obok jest bomba...";
                 break;
             case 2:
-                Message = "Juz nie duzo zostalo...";
+                message = "Juz nie duzo zostalo...";
                 break;
             case 3:
-                Message = "Ja bym wybral cos innego...";
+                message = "Ja bym wybral cos innego...";
                 break;
             case 4:
-                Message = "Ty chyba nie wiesz co robisz...";
+                message = "Ty chyba nie wiesz co robisz...";
                 break;
             case 5:
-                Message = "Bylem pewny, ze tam jest bomba!";
+                message = "Bylem pewny, ze tam jest bomba!";
                 break;
         }
-        return Message;
+        System.out.println(message);
     }
 
-    public static String afterMarkABomb() {
+    public static void afterMarkABomb() {
         int numberOfAvailableMessages = 3;
-        String Message = null;
+        String message = null;
         switch (giveMeRandomNumber(numberOfAvailableMessages - 1)) {
             case 0:
-                Message = "Nie jestem taki pewny...";
+                message = "Nie jestem taki pewny...";
                 break;
             case 1:
-                Message = "Chyba nie wiesz co robisz...";
+                message = "Chyba nie wiesz co robisz...";
                 break;
             case 2:
-                Message = "Dobry wybor!";
+                message = "Dobry wybor!";
                 break;
         }
-        return Message;
+        System.out.println(message);
     }
 
-    public static String afterUnmarkABomb() {
+    public static void afterUnmarkABomb() {
         int numberOfAvailableMessages = 3;
-        String Message = null;
+        String message = null;
         switch (giveMeRandomNumber(numberOfAvailableMessages - 1)) {
             case 0:
-                Message = "Jednak nie jestes taki pewny?";
+                message = "Jednak nie jestes taki pewny?";
                 break;
             case 1:
-                Message = "A jednak!";
+                message = "A jednak!";
                 break;
             case 2:
-                Message = "Tam jest bomba... mowie ci...";
+                message = "Tam jest bomba... mowie ci...";
                 break;
         }
-        return Message;
+        System.out.println(message);
+    }
+
+    public static void tooManyMarkedBombs() {
+        int numberOfAvailableMessages = 3;
+        String message = null;
+        switch (giveMeRandomNumber(numberOfAvailableMessages - 1)) {
+            case 0:
+                message = "Za duzo bomb na tej planszy widzisz... tu jest tylko ";
+                break;
+            case 1:
+                message = "";
+                break;
+            case 2:
+                message = "";
+                break;
+        }
+        System.out.println(message);
     }
 
 }

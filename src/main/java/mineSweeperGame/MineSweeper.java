@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class MineSweeper {
     Board board;
+    boolean boardHasAlreadyBeenDisplayed = false;
 
     public void play() {
 
@@ -16,18 +17,15 @@ public class MineSweeper {
 
                 case 'h':
                     board = new Board(Difficulty.HARD);
-                    System.out.println("Podziwiam!");
-                    System.out.println("Powodzenia!");
+                    Messages.hardDificultyMessage();
                     break;
                 case 'e':
                     board = new Board(Difficulty.EASY);
-                    System.out.println("Jesteś mało ambitny!");
-                    System.out.println("Powodzenia!");
+                    Messages.easyDificultyMessage();
                     break;
                 case 'm':
                     board = new Board(Difficulty.MEDIUM);
-                    System.out.println("Tak w sam raz!");
-                    System.out.println("Powodzenia!");
+                    Messages.mediumDificultyMessage();
                     break;
             }
         } catch (IndexOutOfBoundsException|NullPointerException|NumberFormatException ex) {
@@ -54,6 +52,9 @@ public class MineSweeper {
 
     private void askForMove() {
 
+        if (boardHasAlreadyBeenDisplayed == true) {
+            Messages.afterMove();
+        }
         System.out.println("Wykonaj ruch: ZAZNACZ BOMBĘ (b), ODKRYJ POLE (o), ODZNACZ BOMBĘ (x)");
         int row = 0;
         int col = 0;
@@ -83,5 +84,6 @@ public class MineSweeper {
         } catch (IndexOutOfBoundsException|NumberFormatException ex) {
             askForMove();
         }
+        boardHasAlreadyBeenDisplayed = true;
     }
 }
