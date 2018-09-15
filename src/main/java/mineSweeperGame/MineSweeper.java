@@ -4,29 +4,27 @@ import java.util.Scanner;
 
 public class MineSweeper {
     Board board;
+    boolean boardHasAlreadyBeenDisplayed = false;
 
     public void play() {
 
 
-        System.out.println("podaj poziom trudności: EASY(e), MEDIUM(m), HARD(h)");
+        System.out.println("Podaj poziom trudności: EASY(e), MEDIUM(m), HARD(h)");
         Scanner sc = new Scanner(System.in);
         char c = sc.next().charAt(0);
         switch (c) {
 
             case 'h':
                 board = new Board(Difficulty.HARD);
-                System.out.println("Podziwiam!");
-                System.out.println("Powodzenia!");
+                Messages.hardDificultyMessage();
                 break;
             case 'e':
                 board = new Board(Difficulty.EASY);
-                System.out.println("Jesteś mało ambitny!");
-                System.out.println("Powodzenia!");
+                Messages.easyDificultyMessage();
                 break;
             case 'm':
                 board = new Board(Difficulty.MEDIUM);
-                System.out.println("Tak w sam raz!");
-                System.out.println("Powodzenia!");
+                Messages.mediumDificultyMessage();
                 break;
             default:
                 break;
@@ -46,7 +44,14 @@ public class MineSweeper {
 
     private void askForMove() {
 
-        System.out.println("zrob ruch: podaj pole i co chcesz zrobic (b-oznacz jako bombe, o - odkryj pole)");
+        if (boardHasAlreadyBeenDisplayed == false) {
+            System.out.println("zrob ruch: podaj pole i co chcesz zrobic (b-oznacz jako bombe, o - odkryj pole)");
+        } else {
+            System.out.println("zrob ruch: podaj pole i co chcesz zrobic (b-oznacz jako bombe, o - odkryj pole)");
+            Messages.afterMove();
+        }
+
+
         int row = 0;
         int col = 0;
         char move = 0;
@@ -62,10 +67,10 @@ public class MineSweeper {
         switch (move) {
 
             case 'b':
-               board.makeAMove(MoveType.MARKASBOMB, row, col);
+                board.makeAMove(MoveType.MARKASBOMB, row, col);
                 break;
             case 'o':
-               board.makeAMove(MoveType.CLICK, row, col);
+                board.makeAMove(MoveType.CLICK, row, col);
                 break;
             case 'x':
                 board.makeAMove(MoveType.UNMARKED, row, col);
@@ -76,4 +81,5 @@ public class MineSweeper {
             askForMove();
         }
     }
+
 }

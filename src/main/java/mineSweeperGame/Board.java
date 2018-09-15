@@ -1,6 +1,8 @@
 package mineSweeperGame;
 
 
+import sun.plugin2.message.Message;
+
 import static mineSweeperGame.MoveType.MARKASBOMB;
 
 public class Board {
@@ -31,11 +33,11 @@ public class Board {
                 if (cells[row][col].getBombsAround()==0){
 
 
-                    }
+                }
 
                 if (cells[row][col].getIsABomb()) {
                     displayArray[row][col] = "\u263B";
-                    System.out.println("BOMBA!!! Przegrałeś!");
+                    Messages.lostingMessage();
                     gameState = gameState.LOST;
                 }
                 break;
@@ -49,10 +51,12 @@ public class Board {
                 counterOfMarkedCells++;
                 if (cells[row][col].getIsABomb()) {
                     counterOfMarkedBombs++;
+                    Messages.afterMarkABomb();
                 }
 
                 if (counterOfMarkedBombs == difficulty.getNumberOfBombs()) {
                     this.gameState = gameState.WON;
+                    Messages.winningMessage();
                 }
                 displayArray[row][col] = "\u2020";
                 break;
@@ -60,6 +64,7 @@ public class Board {
             case UNMARKED:
                 if (displayArray[row][col].equals("\u2020")) {
                     displayArray[row][col] = "\u25A0";
+                    Messages.afterUnmarkABomb();
                 }
                 break;
 
