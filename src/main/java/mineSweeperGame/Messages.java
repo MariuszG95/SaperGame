@@ -14,7 +14,7 @@ public class Messages {
         String Message = null;
         switch (giveMeRandomNumber(numberOfAvailableMessages - 1)) {
             case 0:
-                Message = "Stac Cie na wiecej!";
+                Message = "Stać Cie na wiecej!";
                 break;
             case 1:
                 Message = "Powaznie?";
