@@ -41,10 +41,10 @@ public class MineSweeper {
         switch (move) {
 
             case 'b':
-                board.makeAMove().markAsBomb(row, col);
+               board.makeAMove(MoveType.MARKASBOMB, row, col);
                 break;
             case 'o':
-                board.makeAMove().check(row, col);
+               board.makeAMove(MoveType.CLICK, row, col);
                 break;
             default:
                 break;

@@ -1,5 +1,7 @@
 package mineSweeperGame;
 
+import static mineSweeperGame.MoveType.CLICK;
+
 public class Board {
 
     private GameState gameState;
@@ -15,11 +17,15 @@ public class Board {
         this.displayArray = cellBoardGenerator.generateCoveredDisplayArray(difficulty.getCol(), difficulty.getRow());
     }
 
-    public Move makeAMove(Move move) {
-        Move move = new Move();
+    public void makeAMove(MoveType move, int row, int col) {
+        switch (move){
+            case CLICK:
+
+        }
 
 
-        return move;
+
+
     }
 
     public String[][] getDisplayArray() {
