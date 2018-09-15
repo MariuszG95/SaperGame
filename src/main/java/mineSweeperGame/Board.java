@@ -32,7 +32,18 @@ public class Board {
                     displayArray[row][col] = "\u263B";
                     System.out.println("BOMBA!!! Przegrałeś!");
                     gameState = gameState.LOST;
-                } else {
+                    for (int i = 0; i < displayArray.length; i++) {
+                        for (int j = 0; j < displayArray[0].length; j++) {
+                            if (cells[i][j].getIsABomb()) {
+                                displayArray[i][j] = "\u263B";
+                            } else {
+                                displayArray[i][j] = String.valueOf((cells[i][j]).getBombsAround());
+                            }
+
+                        }
+                    }
+                }
+                 else {
                     displayArray[row][col] = (cells[row][col].getBombsAround()).toString();
                     if (cells[row][col].getBombsAround() == 0) {
                         displayArray[row][col] = "\u25A1";
