@@ -1,6 +1,8 @@
 package mineSweeperGame;
 
 import static mineSweeperGame.MoveType.CLICK;
+import static mineSweeperGame.MoveType.MARKASBOMB;
+import static mineSweeperGame.MoveType.UNMARKED;
 
 public class Board {
 
@@ -18,16 +20,28 @@ public class Board {
     }
 
     public void makeAMove(MoveType move, int row, int col) {
-        switch (move){
+        switch (move) {
             case CLICK:
-
+                displayArray[row][col] = (cells[row][col].getBombsAround()).toString();
+                if (cells[row][col].getIsABomb()) {
+                    displayArray[row][col] = "\u263B";
+                    System.out.println("Przegrałeś!");
+                    gameState = gameState.LOST;
+                }
                 break;
             case MARKASBOMB:
+                displayArray[row][col] = "\u2020";
+
                 break;
 
+            case UNMARKED:
+                if (displayArray[row][col].equals("\u2020")) {
+                    displayArray[row][col] = "\u25A0";
+                }
+                break;
+
+
         }
-
-
 
 
     }
