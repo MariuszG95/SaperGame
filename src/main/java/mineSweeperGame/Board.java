@@ -11,8 +11,8 @@ public class Board {
     private CellBoardGenerator cellBoardGenerator;
     private Difficulty difficulty;
 
-    int counterOfMarkedBombs = 0;
-    int counterOfMarkedCells = 0;
+    private int counterOfMarkedBombs = 0;
+    private int counterOfMarkedCells = 0;
 
     public Board(Difficulty difficulty) {
         cellBoardGenerator = new CellBoardGenerator();
@@ -29,6 +29,7 @@ public class Board {
             case CLICK:
                 displayArray[row][col] = (cells[row][col].getBombsAround()).toString();
                 if (cells[row][col].getBombsAround()==0){
+                    displayArray[row][col] = "\u25A1";
 
 
                     }

@@ -8,7 +8,7 @@ public class MineSweeper {
     public void play() {
 
 
-        System.out.println("podaj poziom trudności: EASY(e), MEDIUM(m), HARD(h)");
+        System.out.println("Podaj poziom trudności: EASY(e), MEDIUM(m), HARD(h)");
         Scanner sc = new Scanner(System.in);
         char c = sc.next().charAt(0);
         switch (c) {
@@ -46,7 +46,7 @@ public class MineSweeper {
 
     private void askForMove() {
 
-        System.out.println("zrob ruch: podaj pole i co chcesz zrobic (b-oznacz jako bombe, o - odkryj pole)");
+        System.out.println("Wykonaj ruch: ZAZNACZ BOMBĘ (b), ODKRYJ POLE (o), ODZNACZ BOMBĘ (x)");
         int row = 0;
         int col = 0;
         char move = 0;
