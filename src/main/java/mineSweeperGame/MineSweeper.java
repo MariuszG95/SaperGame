@@ -32,7 +32,12 @@ public class MineSweeper {
             display.printDisplay(board.getDisplayArray());
             System.out.println();
             askForMove();
+            if (board.getGameState().equals(GameState.LOST)){
+                display.printDisplay(board.getDisplayArray());
+            }
         } while (board.getGameState().equals(GameState.INPROGRESS));
+
+
 
     }
 
