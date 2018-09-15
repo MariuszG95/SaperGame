@@ -1,5 +1,5 @@
 package mineSweeperGame;
 
 public enum MoveType {
-    CLICK, MARKASBOMB
+    CLICK, MARKASBOMB, UNMARKED;
 }

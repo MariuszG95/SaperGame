@@ -1,4 +1,5 @@
-package mineSweeperGame;
+
+        package mineSweeperGame;
 
 import java.util.Random;
 
