@@ -41,7 +41,12 @@ public class MineSweeper {
             System.out.println();
             askForMove();
 
+
         } while (board.getGameState().equals(GameState.INPROGRESS));
+
+        if (board.getGameState().equals(GameState.LOST)){
+            display.printDisplay(board.getDisplayArray());
+        }
 
 
 

@@ -1,0 +1,7 @@
+
+ysquid:S00120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(‹Ãæ8ÃÜ»ãİ,
+[
+squid:S106"9Replace this use of System.out or System.err by a logger.(ªÓ¼áşÿÿÿÿ8ÃÜ»ãİ,
+[
+squid:S106"9Replace this use of System.out or System.err by a logger.(ºÛ´ûÿÿÿÿ8ÃÜ»ãİ,
+Nsquid:S1068"0Remove this unused "displayArray" private field.(ò°øŒ8ÃÜ»ãİ,
