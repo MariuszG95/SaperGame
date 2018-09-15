@@ -30,7 +30,7 @@ public class Board {
 
                 if (cells[row][col].getIsABomb()) {
                     displayArray[row][col] = "\u263B";
-                    System.out.println("BOMBA!!! Przegrałeś!");
+                    Messages.lostingMessage();
                     gameState = gameState.LOST;
                     for (int i = 0; i < displayArray.length; i++) {
                         for (int j = 0; j < displayArray[0].length; j++) {
@@ -56,12 +56,13 @@ public class Board {
             case MARKASBOMB:
 
                 if (counterOfMarkedCells == difficulty.getNumberOfBombs()) {
-                    System.out.println("odznacz cos");
+                    Messages.tooManyMarkedBombs();
                     break;
                 }
                 displayArray[row][col] = "\u2020";
                 counterOfMarkedCells++;
                 if (cells[row][col].getIsABomb()) {
+                    Messages.afterMarkABomb();
                     counterOfMarkedBombs++;
                 }
 
@@ -69,6 +70,7 @@ public class Board {
                     this.gameState = gameState.WON;
                 }
                 displayArray[row][col] = "\u2020";
+                Messages.winningMessage();
                 break;
 
             case UNMARKED:
