@@ -42,6 +42,7 @@ public class Board {
 
                         }
                     }
+
                 } else {
                     displayArray[row][col] = (cells[row][col].getBombsAround()).toString();
                     if (cells[row][col].getBombsAround() == 0) {
