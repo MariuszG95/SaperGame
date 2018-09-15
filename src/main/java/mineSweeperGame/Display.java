@@ -6,8 +6,8 @@ public class Display {
 
 
     public void printDisplay(String[][] displayArray) {
-        int row = displayArray[0].length;
-        int col = displayArray[1].length;
+        int row = displayArray.length;
+        int col = displayArray[0].length;
 
 
         for (int i = 0; i < row; i++) {
