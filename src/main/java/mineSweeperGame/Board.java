@@ -25,7 +25,7 @@ public class Board {
                 displayArray[row][col] = (cells[row][col].getBombsAround()).toString();
                 if (cells[row][col].getIsABomb()) {
                     displayArray[row][col] = "\u263B";
-                    System.out.println("Przegrałeś!");
+                    System.out.println("BOMBA!!! Przegrałeś!");
                     gameState = gameState.LOST;
                 }
                 break;
