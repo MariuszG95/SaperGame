@@ -34,9 +34,9 @@ public class CellBoardGeneratorTest {
 
     @Test
     public void shouldDisplayArrayOfCells() {
-int row = 16;
-int col =32;
-int numberOfBombs =99;
+        int row = 16;
+        int col = 32;
+        int numberOfBombs = 99;
         Cell[][] cells = cellBoardGenerator.generateCells(row, col, numberOfBombs);
 
 

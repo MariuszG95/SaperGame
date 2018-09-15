@@ -16,8 +16,7 @@ public class CellBoardGenerator {
 
         generateCellsWithoutBomb(row, col);
 
-        generateCellsWithNumberOfBombsAround(row, col
-        );
+        generateCellsWithNumberOfBombsAround(row, col);
 
 
         return cells;

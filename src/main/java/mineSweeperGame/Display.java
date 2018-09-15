@@ -2,12 +2,12 @@ package mineSweeperGame;
 
 public class Display {
 
-    public String [][] displayArray;
-    public CellBoardGenerator cellBoardGenerator;
+    private String[][] displayArray;
 
-    public void printDisplay (String [][] displayArray){
-   int row = displayArray[0].length;
-   int col = displayArray[1].length;
+
+    public void printDisplay(String[][] displayArray) {
+        int row = displayArray[0].length;
+        int col = displayArray[1].length;
 
 
         for (int i = 0; i < row; i++) {

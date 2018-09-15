@@ -35,8 +35,8 @@ public class MineSweeper {
         String input = scanner.next();
         char rowChar = input.charAt(0);
         int row = (int) rowChar - 97;
-        int col = (Integer.parseInt(String.valueOf(input.toString().charAt(1)))) - 1;
-        char move = input.toString().charAt(2);
+        int col = (Integer.parseInt(String.valueOf(input.charAt(1)))) - 1;
+        char move = input.charAt(2);
 
         switch (move) {
 
@@ -44,7 +44,7 @@ public class MineSweeper {
                 board.makeAMove().markAsBomb(row, col);
                 break;
             case 'o':
-                board.makeAMove().click(row, col);
+                board.makeAMove().check(row, col);
                 break;
             default:
                 break;
