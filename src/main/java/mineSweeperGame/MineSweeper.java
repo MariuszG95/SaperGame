@@ -28,8 +28,15 @@ public class MineSweeper {
 
         Display display = new Display();
 
-        display.printDisplay(board.getDisplayArray());
-        System.out.println();
+        do {
+            display.printDisplay(board.getDisplayArray());
+            System.out.println();
+            askForMove();
+        } while (board.getGameState().equals(GameState.INPROGRESS));
+
+    }
+
+    private void askForMove() {
         System.out.println("zrob ruch: podaj pole i co chcesz zrobic (b-oznacz jako bombe, o - odkryj pole)");
         Scanner scanner = new Scanner(System.in);
         String input = scanner.next();
@@ -37,7 +44,6 @@ public class MineSweeper {
         int row = (int) rowChar - 97;
         int col = (Integer.parseInt(String.valueOf(input.charAt(1)))) - 1;
         char move = input.charAt(2);
-
         switch (move) {
 
             case 'b':
@@ -49,6 +55,5 @@ public class MineSweeper {
             default:
                 break;
         }
-
     }
 }

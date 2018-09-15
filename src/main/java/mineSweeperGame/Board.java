@@ -1,6 +1,6 @@
 package mineSweeperGame;
 
-import static mineSweeperGame.MoveType.CLICK;
+import static mineSweeperGame.MoveType.MARKASBOMB;
 
 public class Board {
 
@@ -20,9 +20,13 @@ public class Board {
     public void makeAMove(MoveType move, int row, int col) {
         switch (move){
             case CLICK:
+                displayArray[row][col] = (cells[row][col].getBombsAround()).toString();
 
                 break;
             case MARKASBOMB:
+
+                    displayArray[row][col] = "\u2020";
+
                 break;
 
         }
